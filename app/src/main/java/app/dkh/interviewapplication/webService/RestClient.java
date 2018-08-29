@@ -8,7 +8,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RestClient {
@@ -23,7 +23,7 @@ public class RestClient {
         retrofit = new Retrofit.Builder()
                 .baseUrl(BuildConfig.BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)
                 .build();
 
